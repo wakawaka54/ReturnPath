@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Return Path - Frontend";
+}
+
+<div class="row col-center">
+    <div id="barchart-container" class="col-md-8">
+        <canvas id="barchart" width="200" height="200"></canvas>
+    </div>
+</div>
+
+<div class="row col-center">
+    <div class="col-md-2">
+        <a class="label label-primary" data-toggle="collapse" href="#addSentenceForm">Add Sentence</a>
+    </div>
+</div>
+
+<div id="addSentenceForm" class="row collapse">
+    <form id="fAddSentence">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="sentence" class="col-md-2 control-label">Sentence</label>
+                <div class="col-md-10">
+                    <textarea name="sentence" class="form-control"></textarea>
+                    <span id="sentenceValidation" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-12">
+                    <button id="btnAddSentence" type="submit" class="btn btn-default">Add</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Sentence</th>
+            <th>Tags</th>
+        </tr>
+    </thead>
+    <tbody id="tbSentences">
+
+    </tbody>
+</table>
+
+<ul class="pagination">
+
+</ul>
