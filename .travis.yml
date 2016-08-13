@@ -19,16 +19,10 @@ os:
   - linux
 
 env:
-  matrix:
-    - CLI_VERSION=1.0.0-beta-002071
     - CLI_VERSION=Latest
 
-matrix:
-  allow_failures:
-    - env: CLI_VERSION=Latest
-
 before_install:
-  - find ./scripts -name "*.sh" -exec chmod +x {} \;
+  - find ./ -name "*.sh" -exec chmod +x {} \;
   - ./scripts/show-dotnet-info.sh
   #- if test "$TRAVIS_OS_NAME" == "osx"; then brew update; brew install icu4c; fi
 
@@ -42,17 +36,5 @@ before_install:
   - export PATH="$DOTNET_INSTALL_DIR:$PATH"
 
 script:
-  - ./scripts/show-dotnet-info.sh
-  # Workaround "Too many open files"
-  - ulimit -n 1024
-  # dotnet info
-  - dotnet --info
-  # Run dotnet new 
-  - mkdir -p "test/test-dotnet-new" && pushd "test/test-dotnet-new"
-  - dotnet new --lang c#
-  - dotnet restore
-  - dotnet --verbose build
-  - dotnet --verbose run a b
-  - popd
-  # Run all tests 
-  - dotnet test
+  - chmod +x ./build.sh
+  - ./build.sh
