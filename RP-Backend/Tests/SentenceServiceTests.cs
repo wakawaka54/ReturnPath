@@ -14,6 +14,7 @@ namespace RP_Backend.Tests
     /// </summary> 
     public class SentenceServiceTests
     {
+
         SentenceService service;
 
         IMongoCollection<SentenceModel> dbCollection;
@@ -21,10 +22,12 @@ namespace RP_Backend.Tests
         string testSentence = "easter egg";
         string[] tags = new string[] { "easter", "egg" };
 
+        const string defaultMongoUrl = "mongodb://127.0.0.1:27017";
+
         public SentenceServiceTests()
         {
             //Setup and drop test db
-            var mongoDb = new MongoClient(DbContext.MongoUrl);
+            var mongoDb = new MongoClient(defaultMongoUrl);
             mongoDb.DropDatabase("RPDB-Test");
 
             var testDb = new DbContext("RPDB-Test");
