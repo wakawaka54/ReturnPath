@@ -1,8 +1,57 @@
 language: csharp
-solution: solution-name.sln
-install:
-  - nuget restore solution-name.sln
-  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
+
+#dotnet cli require Ubuntu 14.04
+sudo: required
+dist: trusty
+
+addons:
+  apt:
+    packages:
+    - gettext
+    - libcurl4-openssl-dev
+    - libicu-dev
+    - libssl-dev
+    - libunwind8
+    - zlib1g
+
+os:
+  - linux
+
+env:
+  matrix:
+    - CLI_VERSION=1.0.0-beta-002071
+    - CLI_VERSION=Latest
+
+matrix:
+  allow_failures:
+    - env: CLI_VERSION=Latest
+
+before_install:
+  - find ./scripts -name "*.sh" -exec chmod +x {} \;
+  - ./scripts/show-dotnet-info.sh
+  #- if test "$TRAVIS_OS_NAME" == "osx"; then brew update; brew install icu4c; fi
+
+  # Download script to install dotnet cli
+  - curl -L --create-dirs https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/install.sh -o ./scripts/obtain/install.sh
+  - find ./scripts -name "*.sh" -exec chmod +x {} \;
+  - export DOTNET_INSTALL_DIR="$PWD/.dotnetcli"
+  # use bash to workaround bug https://github.com/dotnet/cli/issues/1725
+  - sudo bash ./scripts/obtain/install.sh --channel "preview" --version "$CLI_VERSION" --install-dir "$DOTNET_INSTALL_DIR" --no-path
+  # add dotnet to PATH
+  - export PATH="$DOTNET_INSTALL_DIR:$PATH"
+
 script:
-  - xbuild /p:Configuration=Release solution-name.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./MyPoject.Tests/bin/Release/MyProject.Tests.dll
+  - ./scripts/show-dotnet-info.sh
+  # Workaround "Too many open files"
+  - ulimit -n 1024
+  # dotnet info
+  - dotnet --info
+  # Run dotnet new 
+  - mkdir -p "test/test-dotnet-new" && pushd "test/test-dotnet-new"
+  - dotnet new --lang c#
+  - dotnet restore
+  - dotnet --verbose build
+  - dotnet --verbose run a b
+  - popd
+  # Run all tests 
+  - dotnet test
