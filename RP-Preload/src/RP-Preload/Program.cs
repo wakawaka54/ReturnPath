@@ -81,32 +81,8 @@ namespace RP_Preload
 
                 res.InsertMany(t.Result);
             }
-            /*
-            BsonJavaScript map = new BsonJavaScript(
-                @"function() {
-                for(var idx = 0; idx < this.Tags.length; idx++)
-                {
-                    var key = this.Tags[idx];
-                    var value = 1;
-                    emit(key, value);
-                }
-                }");
 
-            BsonJavaScript reduce = new BsonJavaScript(
-                @"function(word, values) {
-                    return Array.sum(values);
-                }");
-
-            var what = db.GetCollection<MessageContainer>("Wiki").MapReduce<MapReduceContainer>(map, reduce);
-
-            var results = what.ToEnumerable<MapReduceContainer>();
-            results = results.Where(x => x.value > 50).OrderByDescending(x => x.value);
-
-            foreach(var r in results)
-            {
-                Console.WriteLine($"{r._id} : {r.value}");
-            }*/
-            Console.ReadLine();
+            Console.WriteLine("COMPLETED");
         }
     }
 }
