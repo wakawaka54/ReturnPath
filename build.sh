@@ -9,6 +9,8 @@ if [ -d $artifactsFolder ]; then
   rm -R $artifactsFolder
 fi
 
+dotnet --info
+
 dotnet restore
 
 dotnet test
