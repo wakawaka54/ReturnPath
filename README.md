@@ -1,4 +1,4 @@
-# ReturnPath
+# Return Path
 
 ## API Endpoints
 
