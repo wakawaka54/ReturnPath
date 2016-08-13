@@ -1,4 +1,4 @@
-#![returnpath](https://media.glassdoor.com/sqll/35595/return-path-squarelogo-1424627178627.png)
+<div style="text-align:center;"><img alt="Logo" src="https://media.glassdoor.com/sqll/35595/return-path-squarelogo-1424627178627.png"></img></div>
 
 # Return Path
 
@@ -15,7 +15,10 @@ I looked for online dataets containing large amounts of messaging information bu
 information that seemed easy to strip was Wikipedia. I prepopulated the dataset with sentences from Wikipedia in Oil & Gas companies.
 I developed an **automated script** to do this.
 
-### Software Design
+###Software Design&nbsp;&nbsp;![alt interesting](https://cdn0.iconfinder.com/data/icons/octicons/1024/server-16.png)
+
+
+
 
 ####Frontend & Backend Framework
 
