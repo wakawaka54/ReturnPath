@@ -19,6 +19,8 @@ namespace RP_Backend
                 .AddEnvironmentVariables();
 
             Configuration = builder.Build();
+
+            DbContext.MongoUrl = Configuration["ASPNETCORE_MONGOURL"];
         }
 
         public IConfigurationRoot Configuration { get; }

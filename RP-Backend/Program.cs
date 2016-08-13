@@ -18,7 +18,6 @@ namespace RP_Backend
                 .UseConfiguration(config)
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("http://localhost:1400")
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
