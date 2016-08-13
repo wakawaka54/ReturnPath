@@ -23,7 +23,6 @@ env:
 
 before_install:
   - find ./ -name "*.sh" -exec chmod +x {} \;
-  - ./scripts/show-dotnet-info.sh
   #- if test "$TRAVIS_OS_NAME" == "osx"; then brew update; brew install icu4c; fi
 
   # Download script to install dotnet cli
