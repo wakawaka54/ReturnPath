@@ -15,6 +15,9 @@ I looked for online dataets containing large amounts of messaging information bu
 information that seemed easy to strip was Wikipedia. I prepopulated the dataset with sentences from Wikipedia in Oil & Gas companies.
 I developed an **automated script** to do this.
 
+
+**An important note on this project:** Although it did  take me the full three days to complete this, I started the timer in the middle of the work week and only managed to work on this outside my working hours from 7 - 5.
+
 ###Software Design&nbsp;&nbsp;![alt interesting](https://cdn0.iconfinder.com/data/icons/octicons/1024/server-16.png)
 
 
