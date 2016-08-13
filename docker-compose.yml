@@ -7,7 +7,7 @@ services:
     networks:
       - backend
 
-  RP_Frontend:
+  rp-frontend:
     container_name: rp-frontend
     build: ./RP-Frontend
     ports:
@@ -17,7 +17,7 @@ services:
     environment:
       - ASPNETCORE_APIURL="http://rp-backend:1479"
 
-  RP_Backend:
+  rp-backend:
     container_name: rp-backend
     build: ./RP-Backend
     ports:
