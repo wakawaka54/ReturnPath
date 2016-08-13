@@ -20,6 +20,7 @@ namespace RP_Backend
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:1479")
                 .Build();
 
             host.Run();

@@ -16,6 +16,7 @@ namespace RP_Frontend
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:1410")
                 .Build();
 
             host.Run();
