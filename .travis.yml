@@ -26,6 +26,10 @@ services:
 
 before_install:
   - find ./ -name "*.sh" -exec chmod +x {} \;
+  
+  - mkdir -p data/db
+  - mongod --dbpath=data/db &
+  
   #- if test "$TRAVIS_OS_NAME" == "osx"; then brew update; brew install icu4c; fi
   # Install OpenSSL
   - if test "$TRAVIS_OS_NAME" == "osx"; then
