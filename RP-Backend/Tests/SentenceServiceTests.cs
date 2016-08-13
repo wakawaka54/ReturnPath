@@ -24,7 +24,7 @@ namespace RP_Backend.Tests
         public SentenceServiceTests()
         {
             //Setup and drop test db
-            var mongoDb = new MongoClient("mongodb://localhost:27017");
+            var mongoDb = new MongoClient(DbContext.MongoUrl);
             mongoDb.DropDatabase("RPDB-Test");
 
             var testDb = new DbContext("RPDB-Test");
