@@ -1,4 +1,4 @@
-<div style="text-align:center;"><img alt="Logo" src="https://media.glassdoor.com/sqll/35595/return-path-squarelogo-1424627178627.png"></img></div>
+#![Logo](https://media.glassdoor.com/sqll/35595/return-path-squarelogo-1424627178627.png)
 
 # Return Path
 
@@ -43,3 +43,7 @@ Deployment is containerized using a Docker-Compose file. I had issues with the M
 Security is a big deal. Microsoft was good support for many different authentication model. Currently, this project has no built in security.
 Generally, I use a simple JWT based authentication but I wanted to focus mainly on developing a well written API project and integrating MongoDb.
 
+![Software Development](https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/server-128.png)
+
+@ **Alex Bello**
+August 2016
