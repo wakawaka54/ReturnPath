@@ -24,14 +24,20 @@ env:
 before_install:
   - find ./ -name "*.sh" -exec chmod +x {} \;
   #- if test "$TRAVIS_OS_NAME" == "osx"; then brew update; brew install icu4c; fi
-
-  # Download script to install dotnet cli
-  - curl -L --create-dirs https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/install.sh -o ./scripts/obtain/install.sh
-  - find ./scripts -name "*.sh" -exec chmod +x {} \;
+  # Install OpenSSL
+  - if test "$TRAVIS_OS_NAME" == "osx"; then
+      brew install openssl;
+      brew link --force openssl;
+      export DOTNET_SDK_URL="https://go.microsoft.com/fwlink/?LinkID=809128";
+    else
+      export DOTNET_SDK_URL="https://go.microsoft.com/fwlink/?LinkID=809129";
+    fi
   - export DOTNET_INSTALL_DIR="$PWD/.dotnetcli"
-  # use bash to workaround bug https://github.com/dotnet/cli/issues/1725
-  - sudo bash ./scripts/obtain/install.sh --channel "preview" --version "$CLI_VERSION" --install-dir "$DOTNET_INSTALL_DIR" --no-path
-  # add dotnet to PATH
+  # Install .NET CLI
+  - mkdir $DOTNET_INSTALL_DIR
+  - curl -L $DOTNET_SDK_URL -o dotnet_package
+  - tar -xvzf dotnet_package -C $DOTNET_INSTALL_DIR
+  # Add dotnet to PATH
   - export PATH="$DOTNET_INSTALL_DIR:$PATH"
 
 script:
