@@ -1,5 +1,7 @@
 ﻿// Write your Javascript code.
 
+var apiRoute = "http://localhost:1479/api/sentences";
+
 var currentPage = 0;
 var totalPages = 1;
 
@@ -37,7 +39,7 @@ function ajaxAddSentence_Setup()
 
 function ajaxAddSentence(event)
 {
-    let serviceUrl = "http://localhost:1479/api/sentences";
+    let serviceUrl = apiRoute;
     let form = $('#fAddSentence');
 
     $.ajax({
@@ -75,7 +77,7 @@ function ajaxShowSentences(page)
 {
     if (page == undefined) { page = 0; }
 
-    let serviceUrl = "http://localhost:1479/api/sentences?page=" + page;
+    let serviceUrl = apiRoute + "?page=" + page;
 
     $.ajax({
         type: 'GET',
@@ -101,7 +103,7 @@ function ajaxShowSentences(page)
 
         for (var i = 0; i != data.sentences.length; i++)
         {
-            $(tbody).append('<tr><td>' + data.sentences[i].sentence + '</td><td>' + data.sentences[i].tags + '</td><td><a class="btn btn-danger" onclick="ajaxDeleteSentence(' + data.sentences[i].id + ')">x</a></td></tr>');
+            $(tbody).append('<tr><td>' + data.sentences[i].sentence + '</td><td>' + data.sentences[i].tags + '</td><td><a class="btn btn-danger" onclick="ajaxDeleteSentence(' + "'" + data.sentences[i].id + "'" + ')">x</a></td></tr>');
         }
 
         ajaxStatistics();
@@ -110,7 +112,7 @@ function ajaxShowSentences(page)
 
 function ajaxDeleteSentence(id)
 {
-    let serviceUrl = "http://localhost:1479/api/sentences/" + id;
+    let serviceUrl = apiRoute + "/" + id;
 
     $.ajax({
         type: 'DELETE',
@@ -126,7 +128,7 @@ function ajaxDeleteSentence(id)
 
 function ajaxStatistics()
 {
-    let serviceUrl = "http://localhost:1479/api/sentences/statistics";
+    let serviceUrl = apiRoute + "/statistics";
 
     $.ajax({
         type: 'GET',

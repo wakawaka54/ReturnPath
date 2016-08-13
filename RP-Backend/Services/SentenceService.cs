@@ -65,7 +65,7 @@ namespace RP_Backend.Services
             if (page == null) { page = 0; }
             int p = (int)page;
 
-            var results = await _dataStore.Find(x => true).Skip(page * ItemsPerPage).Limit(ItemsPerPage).ToListAsync<SentenceModel>();
+            var results = await _dataStore.Find(x => true).Sort(Builders<SentenceModel>.Sort.Descending(x => x.ID)).Skip(page * ItemsPerPage).Limit(ItemsPerPage).ToListAsync<SentenceModel>();
             var count = await _dataStore.Find(x => true).CountAsync();
 
             var pag = new Pagination() { Current = p, Total = (int)Math.Ceiling((double)count/(double)ItemsPerPage) };

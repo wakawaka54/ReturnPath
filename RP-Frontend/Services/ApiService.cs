@@ -8,7 +8,7 @@ namespace RP_Frontend.Services
 {
     public class ApiService : IApiService
     {
-        string apiAddress = "http://localhost:1337";
+        string apiAddress = "http://localhost:1479";
 
         public async Task<HttpResponseMessage> Get(string request)
         {
