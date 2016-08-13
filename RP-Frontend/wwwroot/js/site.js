@@ -1,7 +1,5 @@
 ﻿// Write your Javascript code.
 
-var apiRoute = "http://localhost:1479/api/sentences";
-
 var currentPage = 0;
 var totalPages = 1;
 

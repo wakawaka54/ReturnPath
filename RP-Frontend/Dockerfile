@@ -8,6 +8,6 @@ RUN ["dotnet", "restore"]
 
 RUN ["dotnet", "build"]
 
-EXPOSE 1479/tcp
+EXPOSE 1410/tcp
 
-ENTRYPOINT ["dotnet", "run", "--server.urls", "http://*:1479"]
+ENTRYPOINT ["dotnet", "run", "--server.urls", "http://*:1410"]

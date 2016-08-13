@@ -22,6 +22,8 @@ namespace RP_Frontend
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            ApiService.ApiAddress = Configuration["ASPNETCORE_APIURL"] + "/api/sentences";
         }
 
         public IConfigurationRoot Configuration { get; }

@@ -8,7 +8,7 @@ namespace RP_Frontend.Services
 {
     public class ApiService : IApiService
     {
-        string apiAddress = "http://localhost:1479";
+        public static string ApiAddress = "http://*:1479/api/sentences";
 
         public async Task<HttpResponseMessage> Get(string request)
         {
@@ -16,7 +16,7 @@ namespace RP_Frontend.Services
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(apiAddress);
+                client.BaseAddress = new Uri(ApiAddress);
 
                 response = await client.GetAsync(request);
             }
@@ -30,7 +30,7 @@ namespace RP_Frontend.Services
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(apiAddress);
+                client.BaseAddress = new Uri(ApiAddress);
 
                 response = await client.PostAsync(request, content);
             }

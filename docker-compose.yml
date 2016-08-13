@@ -1,0 +1,35 @@
+version: '2'
+services:
+
+  mongo:
+    container_name: mongodb
+    image: mongo:3.2
+    networks:
+      - backend
+
+  RP_Frontend:
+    container_name: rp-frontend
+    build: ./RP-Frontend
+    ports:
+      - "1410:1410"
+    networks:
+      - public
+    environment:
+      - ASPNETCORE_APIURL="http://rp-backend:1479"
+
+  RP_Backend:
+    container_name: rp-backend
+    build: ./RP-Backend
+    ports:
+      - "1479:1479"
+    networks:
+      - public
+      - backend
+    environment:
+      - ASPNETCORE_MONGOURL=mongodb://mongo:27017/
+
+networks:
+  public:
+    driver: bridge
+  backend:
+    driver: bridge
