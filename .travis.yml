@@ -21,6 +21,9 @@ os:
 env:
     - CLI_VERSION=Latest
 
+services:
+  - mongodb
+
 before_install:
   - find ./ -name "*.sh" -exec chmod +x {} \;
   #- if test "$TRAVIS_OS_NAME" == "osx"; then brew update; brew install icu4c; fi
