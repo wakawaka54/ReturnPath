@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Collections;
 
+using Microsoft.Extensions.Configuration;
+
 using System.Net.Http;
 
 using RP_Preload.Sources;
@@ -18,7 +20,10 @@ namespace RP_Preload
     {
         public static void Main(string[] args)
         {
-            var client = new MongoClient("mongodb://localhost:27017");
+            if(args.Length == 0) { return; }
+
+            Console.WriteLine("MongoDB-Url: " + args[0]);
+            var client = new MongoClient(args[0]);
             var db = client.GetDatabase("RPDB");
 
             Console.WriteLine("Connected to DB");

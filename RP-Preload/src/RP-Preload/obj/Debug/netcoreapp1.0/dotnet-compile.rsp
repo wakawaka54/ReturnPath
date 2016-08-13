@@ -1,5 +1,5 @@
---temp-output:C:\Users\Alex Bello\Documents\Visual Studio 2015\Projects\RP-Preload\src\RP-Preload\obj\Debug\netcoreapp1.0\
---out:C:\Users\Alex Bello\Documents\Visual Studio 2015\Projects\RP-Preload\src\RP-Preload\bin\Debug\netcoreapp1.0\RP-Preload.dll
+--temp-output:C:\Users\Alex Bello\Documents\GitHub\ReturnPath\RP-Preload\src\RP-Preload\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Alex Bello\Documents\GitHub\ReturnPath\RP-Preload\src\RP-Preload\bin\Debug\netcoreapp1.0\RP-Preload.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -174,8 +174,8 @@
 --reference:C:\Users\Alex Bello\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Alex Bello\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:C:\Users\Alex Bello\.nuget\packages\System.Xml.XPath\4.0.1\ref\netstandard1.3\System.Xml.XPath.dll
-C:\Users\Alex Bello\Documents\Visual Studio 2015\Projects\RP-Preload\src\RP-Preload\Program.cs
-C:\Users\Alex Bello\Documents\Visual Studio 2015\Projects\RP-Preload\src\RP-Preload\Model\MapReduceContainer.cs
-C:\Users\Alex Bello\Documents\Visual Studio 2015\Projects\RP-Preload\src\RP-Preload\Model\MessageContainer.cs
-C:\Users\Alex Bello\Documents\Visual Studio 2015\Projects\RP-Preload\src\RP-Preload\Properties\AssemblyInfo.cs
-C:\Users\Alex Bello\Documents\Visual Studio 2015\Projects\RP-Preload\src\RP-Preload\Sources\Wikisource.cs
+C:\Users\Alex Bello\Documents\GitHub\ReturnPath\RP-Preload\src\RP-Preload\Program.cs
+C:\Users\Alex Bello\Documents\GitHub\ReturnPath\RP-Preload\src\RP-Preload\Model\MapReduceContainer.cs
+C:\Users\Alex Bello\Documents\GitHub\ReturnPath\RP-Preload\src\RP-Preload\Model\MessageContainer.cs
+C:\Users\Alex Bello\Documents\GitHub\ReturnPath\RP-Preload\src\RP-Preload\Properties\AssemblyInfo.cs
+C:\Users\Alex Bello\Documents\GitHub\ReturnPath\RP-Preload\src\RP-Preload\Sources\Wikisource.cs
