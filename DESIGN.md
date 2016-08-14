@@ -49,6 +49,3 @@ Security is a big deal. Microsoft was good support for many different authentica
 Generally, I use a simple JWT based authentication but I wanted to focus mainly on developing a well written API project and integrating MongoDb.
 
 ![Software Development](https://cdn1.iconfinder.com/data/icons/flat-business-icons/128/server-128.png)
-
-@ **Alex Bello**
-August 2016
